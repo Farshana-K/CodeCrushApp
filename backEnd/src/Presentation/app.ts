@@ -6,6 +6,7 @@ import { connectDB } from '@/Infrastructure/Config/mongo.config';
 import routes from './Routes/index';
 import { logger } from '../Infrastructure/Services/Logger' ;
 import { errorHandler } from './Middlewares/errorHandler';;
+import { env } from '../Infrastructure/Config/env';
 
 const app = express();
 
@@ -15,7 +16,7 @@ app.use(
 
 app.use(
     cors({
-        origin: ['http://localhost:5173', 'https://codecrush.lol'],
+        origin: ['http://localhost:5173', env.FRONTEND_URL],
         credentials: true
     })
 );
