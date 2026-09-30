@@ -9,6 +9,8 @@ export const envSchema = z.object({
     JWT_RESET_SECRET: z.string().min(32),
     EMAIL_USER: z.string(),
     EMAIL_PASS: z.string(),
+    RESEND_API_KEY: z.string().min(1),
+    EMAIL_FROM: z.string().min(1),
     JWT_ACCESS_TOKEN_MAX_AGE: z.coerce.number(),
     JWT_REFRESH_TOKEN_MAX_AGE: z.coerce.number(),
     JWT_RESET_TOKEN_MAX_AGE: z.coerce.number(),

@@ -1,4 +1,4 @@
-import nodemailer from 'nodemailer';
+/*import nodemailer from 'nodemailer';
 import { env } from './env';
 
 export const mailTransporter = nodemailer.createTransport({
@@ -9,4 +9,10 @@ export const mailTransporter = nodemailer.createTransport({
         user: env.EMAIL_USER,
         pass: env.EMAIL_PASS
     }
-});
+});*/
+
+import { Resend } from 'resend';
+
+import { env } from './env';
+
+export const resend = new Resend(env.RESEND_API_KEY);
